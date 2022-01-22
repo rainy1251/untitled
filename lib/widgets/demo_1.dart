@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -109,3 +111,23 @@ class _CheckWidgetState extends State<CheckWidget> {
     );
   }
 }
+
+class ProgressWidget extends StatelessWidget {
+  const ProgressWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: 16,),
+        LinearProgressIndicator(value: .5
+            ,valueColor: AlwaysStoppedAnimation(Colors.green)),
+        SizedBox(height: 16),
+        CircularProgressIndicator(),
+        SizedBox(height: 16),
+        CupertinoActivityIndicator()
+      ],
+    );
+  }
+}
+

@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         elevation: 10.0,
         centerTitle: true,
       ),
-      body: const CheckWidget(),
+      body: const ProgressWidget(),
     );
   }
 }
