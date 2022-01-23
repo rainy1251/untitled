@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/widgets/LayoutWidget.dart';
+import 'package:untitled/widgets/LoginPage.dart';
 import 'package:untitled/widgets/demo_1.dart';
 
 main() => runApp(const MyApp());
@@ -8,9 +10,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      routes: {
+        "/": (context) => LoginPage(),
+        "layout": (context) => LayoutWidget(),
+      },
+      initialRoute: "layout",
+      onGenerateRoute: (RouteSettings s) {
+        print(s);
+        switch (s.name) {
+          case "menu":
+            return MaterialPageRoute(
+                builder: (context) {
+                  return MenuPage();
+                },
+                settings: s);
+            break;
+          default:
+        }
+      },
     );
   }
 }
@@ -26,7 +45,7 @@ class HomePage extends StatelessWidget {
         elevation: 10.0,
         centerTitle: true,
       ),
-      body: const ProgressWidget(),
+      body: const InputWidget(),
     );
   }
 }
@@ -40,6 +59,7 @@ class CountPage extends StatefulWidget {
 
 class _CountPageState extends State<CountPage> {
   int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
