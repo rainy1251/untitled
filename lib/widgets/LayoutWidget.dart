@@ -244,8 +244,12 @@ class ConstrainedBoxWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
                 borderRadius: BorderRadius.circular(10.0),
-                boxShadow:
-            ),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black45,
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 2.0)
+                ]),
             child: Padding(
               padding: EdgeInsetsDirectional.only(
                   start: 100, top: 20, end: 100, bottom: 20),

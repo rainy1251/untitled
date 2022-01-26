@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/widgets/LayoutWidget.dart';
 import 'package:untitled/widgets/LoginPage.dart';
+import 'package:untitled/widgets/SecondPage.dart';
 import 'package:untitled/widgets/demo_1.dart';
 
 main() => runApp(const MyApp());
@@ -12,11 +13,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        brightness: Brightness.light,
+      ),
       routes: {
         "/": (context) => LoginPage(),
         "layout": (context) => LayoutWidget(),
+        "second": (context) => SecondPage(),
       },
-      initialRoute: "layout",
+      initialRoute: "second",
       onGenerateRoute: (RouteSettings s) {
         print(s);
         switch (s.name) {
