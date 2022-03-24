@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/widgets/BottomNavigationDemo.dart';
 import 'package:untitled/widgets/LayoutWidget.dart';
 import 'package:untitled/widgets/LoginPage.dart';
+import 'package:untitled/widgets/MyBottomNavigationBar.dart';
 import 'package:untitled/widgets/SecondPage.dart';
 import 'package:untitled/widgets/demo_1.dart';
 
@@ -21,8 +23,10 @@ class MyApp extends StatelessWidget {
         "/": (context) => LoginPage(),
         "layout": (context) => LayoutWidget(),
         "second": (context) => SecondPage(),
+        "navigation": (context) => BottomNavigationDemo(),
+        "myNavigation": (context) => MyBottomNavigationBar(),
       },
-      initialRoute: "second",
+      initialRoute: "myNavigation",
       onGenerateRoute: (RouteSettings s) {
         print(s);
         switch (s.name) {

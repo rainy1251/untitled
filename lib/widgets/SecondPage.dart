@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SecondPage extends StatefulWidget {
   SecondPage({Key? key}) : super(key: key);
-  List<Widget> widgets = [FlutterView(), AndroidView(), IosView()];
+  List<Widget> widgets = [FlutterView(), AndroidMyView(), IosView()];
 
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -79,8 +79,8 @@ class FlutterView extends StatelessWidget {
   }
 }
 
-class AndroidView extends StatelessWidget {
-  const AndroidView({Key? key}) : super(key: key);
+class AndroidMyView extends StatelessWidget {
+  const AndroidMyView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -114,16 +114,27 @@ class MyDrawer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 62),
+                padding: EdgeInsets.only(top: 29),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints.expand(
+                      width: double.infinity, height: 60),
+                  child: Container(
+                      color: Colors.red,
+                      padding: EdgeInsets.only(top: 20, left: 20),
+                      child: Text("昵称")),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 0),
                 child: ConstrainedBox(
                   constraints:
                       BoxConstraints.expand(width: double.infinity, height: 60),
                   child: Container(
                       color: Colors.red,
                       padding: EdgeInsets.only(top: 20, left: 20),
-                      child: Text("昵称")),
+                      child: Text("头像")),
                 ),
-              )
+              ),
             ],
           )),
     );
