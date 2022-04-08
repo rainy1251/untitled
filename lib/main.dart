@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/widgets/BottomNavigationDemo.dart';
 import 'package:untitled/widgets/LayoutWidget.dart';
 import 'package:untitled/widgets/LoginPage.dart';
+import 'package:untitled/widgets/MyBottomNavigationBar.dart';
+import 'package:untitled/widgets/SecondPage.dart';
 import 'package:untitled/widgets/demo_1.dart';
 
 main() => runApp(const MyApp());
@@ -12,11 +15,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        brightness: Brightness.light,
+      ),
       routes: {
         "/": (context) => LoginPage(),
         "layout": (context) => LayoutWidget(),
+        "second": (context) => SecondPage(),
+        "navigation": (context) => BottomNavigationDemo(),
+        "myNavigation": (context) => MyBottomNavigationBar(),
       },
-      initialRoute: "layout",
+      initialRoute: "myNavigation",
       onGenerateRoute: (RouteSettings s) {
         print(s);
         switch (s.name) {
