@@ -226,8 +226,8 @@ class ConstrainedBoxWidget extends StatelessWidget {
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 100, minWidth: 0),
           child: Container(
-            width: 100,
-            height: 50,
+            width: 120,
+            height: 80,
             color: Colors.red,
           ),
         ),
