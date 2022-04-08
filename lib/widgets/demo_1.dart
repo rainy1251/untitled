@@ -10,7 +10,7 @@ class TextWidget extends StatelessWidget {
       width: double.infinity,
       color: Colors.blue,
       child: const Text(
-        "这是一个文本",
+        "这是一个文本,测试git_flow",
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
         textDirection: TextDirection.ltr,
@@ -45,7 +45,7 @@ class ButtonWidget extends StatelessWidget {
         FloatingActionButton(
           onPressed: () {},
           backgroundColor: Colors.green,
-          child: Icon(Icons.add, color: Colors.red),
+          child: Icon(Icons.add, color: Colors.yellow),
         )
       ],
     );
